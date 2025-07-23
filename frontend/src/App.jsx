@@ -1,13 +1,17 @@
-import React from 'react';
-import WebcamCapture from './components/WebcamCapture';
+import Hero from './components/Hero';
+import LiveDemo from './components/LiveDemo';
+import Features from './components/Features';
+import CTA from './components/CTA';
+import Footer from './components/Footer';
 
-function App() {
-  return (
-    <div className="p-4 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold mb-6 text-center">Attentiveness Checker</h1>
-      <WebcamCapture />
-    </div>
-  );
-}
+const App = () => (
+  <div className="bg-gray-50 min-h-screen font-sans">
+    <Hero />
+    <LiveDemo />
+    <Features />
+    <CTA />
+    <Footer />
+  </div>
+);
 
 export default App;

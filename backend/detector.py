@@ -1,6 +1,6 @@
 import cv2
 import mediapipe as mp
-from utils.head_pose import estimate_head_pose  # ✅ Use relative import
+from utils.head_pose import estimate_head_pose  
 
 mp_face_mesh = mp.solutions.face_mesh
 
@@ -44,7 +44,7 @@ def analyze_frame(frame):
         ear = calculate_ear(landmarks)
         yaw = estimate_head_pose(landmarks, frame.shape)
 
-        if ear < 0.20 or abs(yaw) > 20:
+        if ear < 0.20 or abs(yaw) > 5:
             return "distracted"
         return "attentive"
     return "no_face"
